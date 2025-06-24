@@ -1,0 +1,15 @@
+Steps to build llvm with Unix MakeFiles
+
+git clone https://github.com/llvm/llvm-project.git
+cd llvm-project
+mkdir build
+cd build
+
+Build with Unix Makefiles
+	cmake -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DLLVM_TARGETS_TO_BUILD="X86;AArch64" ../llvm
+	make
+
+Build with ninja
+	cmake -G Ninja -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_BUILD_TYPE=Release ../llvm
+	ninja
+
