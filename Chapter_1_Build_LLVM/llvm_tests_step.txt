@@ -1,0 +1,17 @@
+When building LLVM, you also build the lit driver, llvm-lit, as part of the default build target or
+the check target
+
+llvm-lit location - ${LLVM_BUILD_PATH}/bin/llvm-lit
+
+Example command - ./bin/llvm-lit test/CodeGen/AArch64/GlobalISel/
+
+
+llvm-lit command Option Effect
+
+    -s  Silent: Only print a progress bar and the final report
+    -v  Verbose: Print the RUN lines and the output of a test on failure
+    -a  Print all: Same as verbose but for all tests, not just the failing ones
+
+
+When using lit directly, you may want to make a habit of using the following command:
+$ ./bin/llvm-lit -sv <tests>
